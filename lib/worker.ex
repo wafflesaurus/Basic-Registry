@@ -20,4 +20,9 @@ defmodule Reg.Worker do
     # Set initial state and return from `init`
     {:ok, %__MODULE__{ id: id }}
 	end
+
+	def handle_info(:crash, _) do
+		fail = 1 / 0
+		fail
+	end
 end

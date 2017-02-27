@@ -25,7 +25,7 @@ defmodule Reg.Super do
 
 	def init(_) do
 		children = [
-			worker(Reg.Worker, [], restart: :temporary)
+			worker(Reg.Worker, [], restart: :transient)
 		]
 
 		supervise(children, strategy: :simple_one_for_one)
